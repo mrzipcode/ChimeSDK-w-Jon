@@ -1,3 +1,4 @@
+# changed with jon
 # Amazon Chime SDK Meetings with Amplify
 
 This repository can be used to deploy a basic [Amazon Chime SDK](https://aws.amazon.com/chime/chime-sdk/) Meeting using AWS Amplify.  
