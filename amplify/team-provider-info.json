@@ -1,0 +1,33 @@
+{
+  "sampledev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-test-sampledev-223803-authRole",
+      "UnauthRoleArn": "arn:aws:iam::783603743790:role/amplify-test-sampledev-223803-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::783603743790:role/amplify-test-sampledev-223803-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-test-sampledev-223803-deployment",
+      "UnauthRoleName": "amplify-test-sampledev-223803-unauthRole",
+      "StackName": "amplify-test-sampledev-223803",
+      "StackId": "arn:aws:cloudformation:us-east-1:783603743790:stack/amplify-test-sampledev-223803/61881970-6fb0-11ed-a385-0a87925b72df",
+      "AmplifyAppId": "d38qac1uyxevi6"
+    },
+    "categories": {
+      "auth": {
+        "biz307amplify5b0bba085b0bba08": {}
+      },
+      "function": {
+        "createMeeting": {
+          "deploymentBucketName": "amplify-test-sampledev-223803-deployment",
+          "s3Key": "amplify-builds/createMeeting-566a324749464150644f-build.zip"
+        },
+        "endMeeting": {
+          "deploymentBucketName": "amplify-test-sampledev-223803-deployment",
+          "s3Key": "amplify-builds/endMeeting-52376e485472574c5a6c-build.zip"
+        }
+      },
+      "api": {
+        "meetingApi": {}
+      }
+    }
+  }
+}
