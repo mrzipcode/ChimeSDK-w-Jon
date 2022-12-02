@@ -92,7 +92,7 @@ const App = () => {
                     </Button>
                   }
                 >
-                  ToastMost powered by Amazon Chime SDK
+                  Amazon Chime SDK Meeting
                 </Header>
               </SpaceBetween>
             }

@@ -24,7 +24,6 @@ import { MeetingSessionConfiguration } from 'amazon-chime-sdk-js';
 
 import awsExports from './aws-exports';
 import {Loader} from "@aws-amplify/ui-react";
-import SpeakerCountdown from './SpeakerCountdown';
 Amplify.configure(awsExports);
 
 const MeetingControlBar = ({
@@ -122,7 +121,6 @@ const MeetingControlBar = ({
   };
 
   return (
-    <div><p/><p/><p/><p/>
     <ControlBar
       showLabels={true}
       responsive={true}
@@ -142,14 +140,13 @@ const MeetingControlBar = ({
         <>
           <ControlBarButton {...LeaveButtonProps} />
           <ControlBarButton {...EndButtonProps} />
+          <ControlBarButton {...TranscribeButtonProps} />
           <AudioInputControl />
           <AudioOutputControl />
           <VideoInputControl />
-            <SpeakerCountdown />
         </>
       )}
-      </ControlBar>
-      </div>
+    </ControlBar>
   );
 };
 
