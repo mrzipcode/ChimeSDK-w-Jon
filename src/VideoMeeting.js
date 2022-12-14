@@ -14,7 +14,71 @@ import '@cloudscape-design/global-styles/index.css';
 import MyCustomVideoTileGrid from './MyCutstomVideoTileGrid';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
-const useSubscribeToDataChannel = (audioVideo, processMessageCallback) => {
+const useCountdown = (audioVideo) => {
+  const [message, setMessage] = useState();
+  const [incomingMessage, setIncomingMessage] = useState();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [inputDuration, setInputDuration] = useState(30);
+  const [duration, setDuration] = useState(30);
+  const [restartKey, setRestartKey] = useState(0);
+
+  const onClickStartCountdown = (shouldSendMessage) => {
+    setIsPlaying(true);
+    setMessage({
+      action: 'startTimer'
+    })
+  }
+
+  const onStartCountdownMessageReceived = () => {
+    setIsPlaying(true);
+    console.log("[custom-log] onStartCountdownMessageReceived", {
+      duration,
+      isPlaying,
+      restartKey
+    })
+  }
+
+  const onClickResetCountdown = (shouldSendMessage) => {
+    setIsPlaying(false);
+    setRestartKey(restartKey + 1);
+    setMessage({
+      action: 'resetTimer'
+    })
+  }
+
+  const onResetCountdownMessageReceived = (shouldSendMessage) => {
+    setIsPlaying(false);
+    setRestartKey(restartKey + 1);
+    console.log("[custom-log] onResetCountdownMessageReceived", {
+      duration,
+      isPlaying,
+      restartKey
+    })
+  }
+
+  const onChangeDuration = (event) => {
+    const value = event.target.value;
+    setInputDuration(value);
+  }
+
+  const onClickSetCountdownDuration = () => {
+    setDuration(inputDuration);
+    setMessage({
+      action: 'setCountdownDuration',
+      duration: inputDuration,
+    })
+  }
+
+  const onSetCountdownDurationMessageReceived = (newDuration) => {
+    setDuration(newDuration);
+    console.log("[custom-log] onResetCountdownMessageReceived", {
+      duration,
+      newDuration,
+      isPlaying,
+      restartKey
+    })
+  }
+
   useEffect(() => {
     if (!audioVideo) {
       console.error('No audioVideo');
